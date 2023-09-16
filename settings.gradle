@@ -15,4 +15,3 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Sort Your Waste"
 include ':app'
-include ':BindingAnnotationProcessor'

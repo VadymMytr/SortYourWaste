@@ -1,7 +1,7 @@
 package vadym.my.wastesorting
 
 import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
 
-class SortingApplication : Application() {
-
-}
+@HiltAndroidApp
+class SortingApplication : Application()
