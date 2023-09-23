@@ -1,20 +1,16 @@
 package vadym.my.wastesorting.di.modules
 
-import android.content.Context
+import dagger.Binds
 import dagger.Module
-import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.qualifiers.ApplicationContext
-import dagger.hilt.components.SingletonComponent
-import javax.inject.Singleton
+import dagger.hilt.android.components.ActivityRetainedComponent
 import vadym.my.wastesorting.data.camera.FilesStorage
 import vadym.my.wastesorting.data.camera.FilesStorageImpl
 
 @Module
-@InstallIn(SingletonComponent::class)
-class FileStorageModule {
+@InstallIn(ActivityRetainedComponent::class)
+abstract class FileStorageModule {
 
-    @Provides
-    @Singleton
-    fun provideFilesStorage(@ApplicationContext context: Context): FilesStorage = FilesStorageImpl(context)
+    @Binds
+    abstract fun bindFileStorage(filesStorageImpl: FilesStorageImpl): FilesStorage
 }

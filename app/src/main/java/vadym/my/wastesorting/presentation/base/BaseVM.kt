@@ -14,21 +14,21 @@ abstract class BaseVM<STATE : BaseScreenState, EVENT : BaseUiEvent> : ViewModel(
     /**
      * Current screen reducer that will reduce the ui [EVENT]s and update the screen [STATE].
      * @see screenState
-     * @see onEvent
+     * @see reduceEvent
      */
     protected abstract val reducer: BaseReducer<STATE, EVENT>
 
     /**
      * Current screen [STATE] flow. Stores all required UI parameters that should be displayed on the screen.
      */
-    val screenState: StateFlow<BaseScreenState> get() = reducer.screenState
+    val screenState: StateFlow<STATE> get() = reducer.screenState
 
     /**
      * Passes given [event] to process it via screen [reducer].
      * @param event the ui [EVENT] that should be reduced
      * @see [BaseReducer.reduce]
      */
-    protected fun onEvent(event: EVENT) {
+    protected fun reduceEvent(event: EVENT) {
         reducer.reduce(event, viewModelScope)
     }
 }
