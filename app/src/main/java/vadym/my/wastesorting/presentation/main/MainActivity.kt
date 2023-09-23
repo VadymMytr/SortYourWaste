@@ -1,14 +1,16 @@
 package vadym.my.wastesorting.presentation.main
 
-import androidx.activity.viewModels
-import com.kobanister.viewbindingannotations.annotation.BindActivity
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
 import dagger.hilt.android.AndroidEntryPoint
-import vadym.my.wastesorting.databinding.ActivityMainBinding
-import vadym.my.wastesorting.presentation.base.BaseActivity
+import vadym.my.wastesorting.presentation.navigation.AppNavHost
 
-@BindActivity
 @AndroidEntryPoint
-class MainActivity : BaseActivity<MainVM, ActivityMainBinding>() {
-    override val viewModel: MainVM by viewModels()
-    override val observe: MainVM.() -> Unit = {}
+class MainActivity : ComponentActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent { AppNavHost() }
+    }
 }
