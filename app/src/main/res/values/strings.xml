@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Sort Your Waste</string>
+
+    <!-- START Introduction & Permissions -->
+    <string name="intro_title">Welcome!</string>
+    <string name="intro_description">I\'ll help you to sort your waste and make the planet more eco!</string>
+
+    <string name="camera_permission_title">Camera Permission Required</string>
+    <string name="camera_permission_description">Please grant the camera permission to add an ability to scan your waste! 🙂\nAlso you can skip this process and grant the permission later! 👌</string>
+
+    <string name="notifications_permission_title">Notifications Permission Required</string>
+    <string name="notifications_permission_description">Please grant the notification permission if you want receive the latest app updates and innovations! 🙂\nAlso you can skip this process and grant the permission later! 👌</string>
+
+    <string name="intro_go_btn">Go!</string>
+    <string name="permissions_allow_btn">Allow</string>
+    <string name="permissions_skip_btn">Skip</string>
+    <!-- END Introduction & Permissions -->
 </resources>
