@@ -7,13 +7,13 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import vadym.my.wastesorting.presentation.onboarding.IntroductionScreen
+import vadym.my.wastesorting.presentation.introduction.IntroductionScreen
 
 @Composable
 fun AppNavHost(
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController(),
-    startDestination: String = NavigationDestinations.HOME,
+    startDestination: String = NavigationDestinations.INTRODUCTION,
 ) {
     NavHost(
         modifier = modifier,
@@ -25,10 +25,11 @@ fun AppNavHost(
 }
 
 private fun NavGraphBuilder.addNavigationGraph() {
-    composable(NavigationDestinations.HOME) {
-        IntroductionScreen()
+    composable(NavigationDestinations.INTRODUCTION) {
+        IntroductionScreen(navigateHome = {
+        })
     }
 
-    composable(NavigationDestinations.CAMERA) {
+    composable(NavigationDestinations.HOME) {
     }
 }
