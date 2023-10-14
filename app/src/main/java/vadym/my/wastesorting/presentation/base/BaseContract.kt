@@ -6,7 +6,12 @@ package vadym.my.wastesorting.presentation.base
 interface BaseScreenState
 
 /**
- * Extends every UI event that should be reduced
- * @see BaseReducer
+ * Extends every UI event that should be proceed
+ * @see BaseVM.processUiEvent
  */
 interface BaseUiEvent
+
+/**
+ * Extends every UI change that should be fired as one-time event.
+ */
+interface BaseSideEffect
